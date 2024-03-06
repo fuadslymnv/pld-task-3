@@ -51,18 +51,18 @@ def main():
     subparsers = parser.add_subparsers(dest='command')
     
     add_task_parser = subparsers.add_parser('add_task')
-    add_task_parser.add_argument('title')
-    add_task_parser.add_argument('description')
+    add_task_parser.add_argument('-title')
+    add_task_parser.add_argument('-description')
     
     remove_task_parser = subparsers.add_parser('remove_task')
-    remove_task_parser.add_argument('id')
+    remove_task_parser.add_argument('-id')
     
     mark_task_completed_parser = subparsers.add_parser('mark_task_completed')
-    mark_task_completed_parser.add_argument('id')
+    mark_task_completed_parser.add_argument('-id')
     
     list_tasks_parser = subparsers.add_parser('list_tasks')
     find_task_parser = subparsers.add_parser('find_task')
-    find_task_parser.add_argument('id')
+    find_task_parser.add_argument('-id')
     args = parser.parse_args()
     
     task_manager = TaskManager()
